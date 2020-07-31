@@ -1,0 +1,13 @@
+name: Beacons
+version: ${project.version}
+main: gg.steve.mc.baseball.tntb.Beacons
+api-version: 1.16
+prefix: TNT Beacon
+depend: [Factions]
+authors: [stevegoodhill]
+description: A beacon that fills nearby dispensers with TNT. Developed for Baseball by Steve.
+website: https://steve.gg
+commands:
+  beacon:
+    usage: /<command>
+    description: Main command for TnTBeacons.

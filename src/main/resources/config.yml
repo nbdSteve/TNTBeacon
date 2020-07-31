@@ -1,0 +1,15 @@
+starting-radius: 1 # 3x3
+
+item:
+  material: 'beacon'
+  data: 0
+  name: '&c&lTNT Beacon'
+  lore:
+    - ''
+    - '&7Place this beacon in your claimed land.'
+    - '&7Once placed, right-click to interact with it.'
+    - ''
+  enchantments:
+  item-flags:
+    - 'hide_attributes'
+  unbreakable: true

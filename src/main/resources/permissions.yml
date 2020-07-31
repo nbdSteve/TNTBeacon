@@ -1,0 +1,4 @@
+command:
+  give: beacons.give
+  reload: beacons.reload
+  help: beacons.help
