@@ -3,7 +3,6 @@ package gg.steve.mc.baseball.tntb.managers;
 import com.massivecraft.factions.Faction;
 import com.massivecraft.factions.Factions;
 import gg.steve.mc.baseball.tntb.core.TnTBeacon;
-import gg.steve.mc.baseball.tntb.framework.utils.LogUtil;
 import gg.steve.mc.baseball.tntb.framework.yml.Files;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
@@ -34,7 +33,9 @@ public class BeaconManager {
                 section.getInt("y"),
                 section.getInt("z"),
                 Bukkit.getWorld(section.getString("world")),
-                Factions.getInstance().getFactionById(section.getString("faction")));
+                Factions.getInstance().getFactionById(section.getString("faction")),
+                section.getInt("auto-fill.amount"),
+                section.getLong("auto-fill.delay"));
     }
 
     public static void shutdown() {
@@ -42,6 +43,7 @@ public class BeaconManager {
             for (Faction faction : beacons.keySet()) {
                 for (TnTBeacon beacon : beacons.get(faction)) {
                     beacon.saveToFile();
+                    beacon.clearHologram();
                 }
             }
             beacons.clear();
@@ -58,7 +60,7 @@ public class BeaconManager {
         } else {
             beacons.put(faction, new ArrayList<>());
         }
-        beacons.get(faction).add(new TnTBeacon(id, block.getX(), block.getY(), block.getZ(), block.getWorld(), faction));
+        beacons.get(faction).add(new TnTBeacon(id, block.getX(), block.getY(), block.getZ(), block.getWorld(), faction, 0, 0));
         return true;
     }
 
@@ -67,6 +69,7 @@ public class BeaconManager {
         for (TnTBeacon beacon : beacons.get(faction)) {
             if (beacon.getChunk().getX() == chunk.getX() && beacon.getChunk().getZ() == chunk.getZ()) {
                 beacon.purge();
+                beacon.clearHologram();
                 beacons.get(faction).remove(beacon);
                 return true;
             }
@@ -87,7 +90,8 @@ public class BeaconManager {
     public static boolean isBeaconBlock(Block block) {
         for (Faction faction : beacons.keySet()) {
             for (TnTBeacon beacon : beacons.get(faction)) {
-                if (beacon.getX() == block.getX() && beacon.getY() == block.getY() && beacon.getZ() == block.getZ()) return true;
+                if (beacon.getX() == block.getX() && beacon.getY() == block.getY() && beacon.getZ() == block.getZ())
+                    return true;
             }
         }
         return false;

@@ -5,12 +5,10 @@ import com.massivecraft.factions.FLocation;
 import com.massivecraft.factions.FPlayers;
 import com.massivecraft.factions.Faction;
 import gg.steve.mc.baseball.tntb.core.TnTBeaconItem;
+import gg.steve.mc.baseball.tntb.framework.message.DebugMessage;
 import gg.steve.mc.baseball.tntb.framework.nbt.NBTItem;
-import gg.steve.mc.baseball.tntb.framework.utils.LogUtil;
 import gg.steve.mc.baseball.tntb.managers.BeaconManager;
 import org.bukkit.Material;
-import org.bukkit.block.Beacon;
-import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -31,19 +29,12 @@ public class PlacementListener implements Listener {
         Faction faction = FPlayers.getInstance().getByPlayer(event.getPlayer()).getFaction();
         if (!Board.getInstance().getFactionAt(new FLocation(event.getBlock())).equals(faction)) {
             event.setCancelled(true);
-            event.getPlayer().sendMessage("You can only place tnt beacons in your claimed land.");
+            DebugMessage.ONLY_IN_CLAIMS.message(event.getPlayer());
             return;
         }
         if (!BeaconManager.addBeacon(faction, event.getBlockPlaced(), id)) {
             event.setCancelled(true);
-            event.getPlayer().sendMessage("There is already a tnt beacon in that chunk - you can not place another.");
-            return;
-        }
-        Block block = event.getBlockPlaced();
-        if (block.getType() == Material.BEACON) {
-            Beacon beacon = (Beacon) block.getState();
-//            beacon.setPrimaryEffect(PotionEffectType.SATURATION);
-//            beacon.update(true);
+            DebugMessage.BEACON_ALREADY_ACTIVE.message(event.getPlayer());
         }
     }
 

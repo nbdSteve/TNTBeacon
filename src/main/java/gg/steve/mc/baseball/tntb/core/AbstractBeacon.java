@@ -10,11 +10,12 @@ import java.util.UUID;
 public abstract class AbstractBeacon {
     private UUID id;
     private BeaconType type;
-    private int x, y, z;
+    private int x, y, z, autofillAmt;
+    private long autofillDelay;
     private World world;
     private Faction faction;
 
-    public AbstractBeacon(UUID id, BeaconType type, int x, int y, int z, World world, Faction faction) {
+    public AbstractBeacon(UUID id, BeaconType type, int x, int y, int z, World world, Faction faction, int autofillAmt, long autofillDelay) {
         this.id = id;
         this.type = type;
         this.x = x;
@@ -22,6 +23,8 @@ public abstract class AbstractBeacon {
         this.z = z;
         this.world = world;
         this.faction = faction;
+        this.autofillAmt = autofillAmt;
+        this.autofillDelay = autofillDelay;
     }
 
     public void saveToFile() {
@@ -35,6 +38,15 @@ public abstract class AbstractBeacon {
         section.set("z", this.z);
         section.set("world", this.world.getName());
         section.set("faction", this.faction.getId());
+        if (autofillAmt != 0 && autofillDelay != 0) {
+            section.set("auto-fill.filling", true);
+            section.set("auto-fill.amount", this.autofillAmt);
+            section.set("auto-fill.delay", this.autofillDelay);
+        } else {
+            section.set("auto-fill.filling", false);
+            section.set("auto-fill.amount", this.autofillAmt);
+            section.set("auto-fill.delay", this.autofillDelay);
+        }
         Files.DATA.save();
     }
 
@@ -69,5 +81,21 @@ public abstract class AbstractBeacon {
 
     public Faction getFaction() {
         return faction;
+    }
+
+    public int getAutofillAmt() {
+        return autofillAmt;
+    }
+
+    public void setAutofillAmt(int autofillAmt) {
+        this.autofillAmt = autofillAmt;
+    }
+
+    public long getAutofillDelay() {
+        return autofillDelay;
+    }
+
+    public void setAutofillDelay(long autofillDelay) {
+        this.autofillDelay = autofillDelay;
     }
 }

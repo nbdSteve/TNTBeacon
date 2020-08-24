@@ -40,7 +40,7 @@ public abstract class AbstractGui {
         inventoriesByID.put(getInventoryID(), this);
     }
 
-    public abstract void refresh(TnTBeacon beacon);
+    public abstract void refresh();
 
     /**
      * Get the inventory map

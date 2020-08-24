@@ -1,5 +1,11 @@
 package gg.steve.mc.baseball.tntb.listener;
 
+import com.massivecraft.factions.Board;
+import com.massivecraft.factions.FLocation;
+import com.massivecraft.factions.FPlayers;
+import com.massivecraft.factions.Faction;
+import gg.steve.mc.baseball.tntb.core.TnTBeacon;
+import gg.steve.mc.baseball.tntb.framework.message.DebugMessage;
 import gg.steve.mc.baseball.tntb.managers.BeaconManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,6 +19,12 @@ public class InteractListener implements Listener {
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
         if (!BeaconManager.isBeaconBlock(event.getClickedBlock())) return;
         event.setCancelled(true);
-        event.getPlayer().sendMessage("inventory");
+        Faction faction = FPlayers.getInstance().getByPlayer(event.getPlayer()).getFaction();
+        if (!Board.getInstance().getFactionAt(new FLocation(event.getClickedBlock())).equals(faction)) {
+            DebugMessage.OWNER_BY_OTHER_FACTION.message(event.getPlayer());
+            return;
+        }
+        TnTBeacon beacon = BeaconManager.getBeacon(faction, event.getClickedBlock().getChunk());
+        beacon.openGui(event.getPlayer());
     }
 }

@@ -113,7 +113,7 @@ public class ItemBuilderUtil {
         if (unbreakable) {
             nbtItem.setBoolean("Unbreakable", true);
         }
-        nbtItem.setBoolean("tools+.gui", true);
+        nbtItem.setBoolean("beacons.gui", true);
     }
 
     public void addNBT(PluginFile file) {

@@ -23,6 +23,7 @@ public abstract class SubCommand {
         this.maxArgLength = maxArgLength;
         this.isPlayerOnly = isPlayerOnly;
         this.node = node;
+        this.aliases = new ArrayList<>();
     }
 
     public Player getPlayer(CommandSender sender) {
@@ -54,7 +55,6 @@ public abstract class SubCommand {
     }
 
     public void addAlias(String alias) {
-        if (this.aliases == null) this.aliases = new ArrayList<>();
         aliases.add(alias);
     }
 

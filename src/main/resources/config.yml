@@ -1,8 +1,8 @@
-starting-radius: 1 # 3x3
+starting-radius: 1 # 3x3 chunks
 
 item:
   material: 'beacon'
-  data: 0
+  data: '0'
   name: '&c&lTNT Beacon'
   lore:
     - ''
@@ -13,3 +13,145 @@ item:
   item-flags:
     - 'hide_attributes'
   unbreakable: true
+
+hologram:
+  enabled: true
+  offset: 1.9
+  text:
+    - '&c&lTNT Beacon'
+  item:
+    enabled: true
+    material: 'tnt'
+    data: '0'
+
+gui:
+  type: 'none'
+  size: 27
+  name: '&c&lTNT Beacon Gui'
+  fillers:
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 11
+      - 14
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+    material: 'stained_glass_pane'
+    data: 7
+    name: ' '
+    lore:
+    enchantments:
+    item-flags:
+      - 'hide_attributes'
+  1:
+    slots:
+      - 10
+    action: 'extract'
+    material: 'ink_sack'
+    data: 5
+    name: '&b&lExtract'
+    lore:
+      - ''
+      - '&7Extract all TNT from dispensers in a &e1x1 &7radius.'
+      - '&7TNT will be deposited into your factions TNT bank.'
+      - ''
+    enchantments:
+    item-flags:
+      - 'hide_attributes'
+    unbreakable: false
+  2:
+    slots:
+      - 12
+    action: 'fill-amt'
+    material: 'ink_sack'
+    data: 3
+    name: '&b&lFill Amount'
+    lore:
+      - ''
+      - '&7Fills all dispensers in a &e1x1 &7radius with the'
+      - '&7specified amount of TNT. TNT will be taken,'
+      - '&7from your factions TNT bank.'
+      - ''
+    enchantments:
+    item-flags:
+      - 'hide_attributes'
+    unbreakable: false
+  3:
+    slots:
+      - 13
+    action: 'fill-max'
+    material: 'ink_sack'
+    data: 1
+    name: '&b&lFill Max'
+    lore:
+      - ''
+      - '&7Fills all dispensers in a &e1x1 &7radius with the max,'
+      - '&7amount of TNT possible. TNT will be taken,'
+      - '&7from your factions TNT bank.'
+      - ''
+    enchantments:
+    item-flags:
+      - 'hide_attributes'
+    unbreakable: false
+  4:
+    slots:
+      - 15
+    action: 'fill-interval'
+    material: 'ink_sack'
+    data: 14
+    name: '&b&lFill Interval'
+    lore:
+      - ''
+      - '&7Prompts you with options to auto-fill all'
+      - '&7dispensers in a &e1x1 &7radius with the desired'
+      - '&7amount of TNT and the desired interval.'
+      - ''
+    enchantments:
+    item-flags:
+      - 'hide_attributes'
+    unbreakable: false
+  5:
+    slots:
+      - 16
+    action: 'auto-fill-cancel'
+    material: 'ink_sack'
+    data: 12
+    name: '&b&lAuto-fill Cancel'
+    lore:
+      - ''
+      - '&7Cancels auto-filling if it is active.'
+      - ''
+    enchantments:
+    item-flags:
+      - 'hide_attributes'
+    unbreakable: false
+  6:
+    slots:
+      - 26
+    action: 'close'
+    material: 'barrier'
+    data: 0
+    name: '&c&lExit'
+    lore:
+      - ''
+      - '&7Exit this gui.'
+      - ''
+    enchantments:
+    item-flags:
+      - 'hide_attributes'
+    unbreakable: false

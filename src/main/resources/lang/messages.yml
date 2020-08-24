@@ -1,0 +1,66 @@
+help:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Example help message.'
+
+reload:
+  action-bar: true
+  text:
+    - '&c&lBeacons: &7You have successfully reloaded the plugin.'
+
+give-giver:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7You have given &e{target} &6{amount}&7x TnT Beacon(s).'
+
+give-receiver:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7You have received &6{amount}&7x TnT Beacon(s).'
+
+successful-fill:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7You have successfully deposited {tnt-total} TNT in to {dispenser-count} dispensers, {tnt-each} TNT has been added to each dispenser.'
+
+action-cancelled:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Action successfully cancelled.'
+
+successful-extract:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7You have successfully extracted {tnt-total} TNT from {dispenser-count} dispensers, it has been deposited into your /f tnt bank.'
+
+chat-initialise:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Please type the desired amount in chat, or type &cexit&7 to cancel.'
+
+auto-fill-cancel:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7You have cancelled the auto-fill task for this beacon if there was one active.'
+
+auto-fill-chat-initialise:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Please enter the auto-fill parameters in chat in this format:'
+    - '&e{tnt-per-dispenser}&7-&e{minutes}&7m&e{seconds}&7s'
+    - '&7or type &cexit &7to cancel.'
+
+auto-fill-success:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7This beacon will now auto-fill dispensers in a &e1x1 &7chunk radius with &6{tnt} &7TNT every &6{minutes} &7minutes and &6{seconds} &7seconds.'
+
+auto-fill-update:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Your TNT beacon at &ex: {x}&7, &eZ: {z} &7has just filled nearby dispeners with &6{tnt} &7TNT.'
+
+auto-fill-stopped:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Your TNT beacon at &ex: {x}&7, &eZ: {z} &7has stopped auto-filling because you have run out of TNT.'

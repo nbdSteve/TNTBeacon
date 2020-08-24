@@ -2,8 +2,11 @@ package gg.steve.mc.baseball.tntb.framework;
 
 import gg.steve.mc.baseball.tntb.cmd.BeaconCmd;
 import gg.steve.mc.baseball.tntb.core.TnTBeaconItem;
+import gg.steve.mc.baseball.tntb.framework.gui.GuiClickListener;
 import gg.steve.mc.baseball.tntb.framework.yml.Files;
 import gg.steve.mc.baseball.tntb.framework.yml.utils.FileManagerUtil;
+import gg.steve.mc.baseball.tntb.listener.ChatListener;
+import gg.steve.mc.baseball.tntb.listener.FEventListener;
 import gg.steve.mc.baseball.tntb.listener.InteractListener;
 import gg.steve.mc.baseball.tntb.listener.PlacementListener;
 import gg.steve.mc.baseball.tntb.managers.BeaconManager;
@@ -46,6 +49,9 @@ public class SetupManager {
         PluginManager pm = instance.getServer().getPluginManager();
         pm.registerEvents(new PlacementListener(), instance);
         pm.registerEvents(new InteractListener(), instance);
+        pm.registerEvents(new GuiClickListener(), instance);
+        pm.registerEvents(new ChatListener(), instance);
+        pm.registerEvents(new FEventListener(), instance);
     }
 
     public static void registerEvent(JavaPlugin instance, Listener listener) {

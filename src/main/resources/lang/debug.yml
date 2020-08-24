@@ -1,0 +1,79 @@
+insufficient-permission:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7You do not have the permission required (&b{node}&7) to do that.'
+
+incorrect-args:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7The number of arguments you entered is invalid.'
+
+invalid-command:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7The command you entered does not exist.'
+
+target-not-online:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, the target player is not online.'
+
+invalid-amount:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, please enter a valid amount.'
+
+owned-by-other-faction:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, that beacon is owned by another faction - you can not access it.'
+
+only-in-claims:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, you may only place tnt beacons in faction land.'
+
+beacon-already-active:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, this chunk already has a tnt beacon active.'
+
+invalid-fill-amount:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, please enter a valid integer, or type &cexit&7 to cancel.'
+
+insufficient-tnt:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, your faction does not have enough TNT in the bank to fill that much, try a different number or type &cexit&7 to cancel.'
+
+larger-amount-required:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, please enter a larger number as some dispensers will have 0 TNT, or type &cexit&7 to cancel.'
+
+larger-amount-required-max:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, please add more TNT to your faction bank as some dispensers will have 0 TNT.'
+
+invalid-minutes:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, please enter a valid amount of minutes, must be an integer that is greater than 0, or type &cexit&7 to cancel.'
+
+invalid-seconds:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, please enter a valid amount of seconds, must be an integer that is greater than 0, or type &cexit&7 to cancel.'
+
+invalid-time:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, please enter a time larger than 0m 0s, or type &cexit&7 to cancel.'
+
+invalid-format:
+  action-bar: false
+  text:
+    - '&c&lBeacons: &7Error, invalid format. Try again or type &cexit &7to cancel.'

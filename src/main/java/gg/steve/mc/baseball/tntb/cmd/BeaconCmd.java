@@ -1,7 +1,6 @@
 package gg.steve.mc.baseball.tntb.cmd;
 
 import gg.steve.mc.baseball.tntb.cmd.sub.GiveCmd;
-import gg.steve.mc.baseball.tntb.cmd.sub.MemeCmd;
 import gg.steve.mc.baseball.tntb.framework.cmd.MainCommand;
 import gg.steve.mc.baseball.tntb.framework.cmd.misc.HelpSubCmd;
 import gg.steve.mc.baseball.tntb.framework.cmd.misc.ReloadSubCmd;
@@ -15,7 +14,6 @@ public class BeaconCmd extends MainCommand {
         addSubCommand(new HelpSubCmd(this), true);
         addSubCommand(new ReloadSubCmd(this), false);
         addSubCommand(new GiveCmd(this), false);
-        addSubCommand(new MemeCmd(this), false);
     }
 
     @Override

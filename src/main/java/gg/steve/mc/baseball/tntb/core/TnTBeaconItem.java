@@ -11,6 +11,7 @@ import java.util.UUID;
 
 public class TnTBeaconItem {
     private static ItemStack item;
+    private static boolean unbreakable;
 
     public static void init() {
         ConfigurationSection section = Files.CONFIG.get().getConfigurationSection("item");
@@ -19,12 +20,14 @@ public class TnTBeaconItem {
         builder.addLore(section.getStringList("lore"));
         builder.addEnchantments(section.getStringList("enchantments"));
         builder.addItemFlags(section.getStringList("item-flags"));
+        unbreakable = section.getBoolean("unbreakable");
         item = builder.getItem();
     }
 
     public static void give(Player player) {
         NBTItem nbt = new NBTItem(item);
         nbt.setString("beacons.id", String.valueOf(UUID.randomUUID()));
+        if (unbreakable) nbt.setBoolean("Unbreakable", true);
         player.getInventory().addItem(nbt.getItem());
     }
 

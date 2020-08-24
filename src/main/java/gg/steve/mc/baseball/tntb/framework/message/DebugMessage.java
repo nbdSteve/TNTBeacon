@@ -10,6 +10,19 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum DebugMessage {
+    TARGET_NOT_ONLINE("target-not-online"),
+    INVALID_AMOUNT("invalid-amount"),
+    ONLY_IN_CLAIMS("only-in-claims"),
+    BEACON_ALREADY_ACTIVE("beacon-already-active"),
+    OWNER_BY_OTHER_FACTION("owned-by-other-faction"),
+    INVALID_FILL_AMOUNT("invalid-fill-amount"),
+    INSUFFICIENT_TNT("insufficient-tnt"),
+    LARGER_AMOUNT_REQUIRED("larger-amount-required"),
+    LARGER_AMOUNT_REQUIRED_MAX("larger-amount-required-max"),
+    INVALID_MINUTES("invalid-minutes"),
+    INVALID_SECONDS("invalid-seconds"),
+    INVALID_TIME("invalid-time"),
+    INVALID_FORMAT("invalid-format"),
     INVALID_COMMAND("invalid-command"),
     INCORRECT_ARGS("incorrect-args"),
     INSUFFICIENT_PERMISSION("insufficient-permission", "{node}");

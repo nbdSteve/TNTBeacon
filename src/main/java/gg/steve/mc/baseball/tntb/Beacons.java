@@ -5,8 +5,11 @@ import gg.steve.mc.baseball.tntb.framework.utils.LogUtil;
 import gg.steve.mc.baseball.tntb.framework.yml.utils.FileManagerUtil;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.text.DecimalFormat;
+
 public final class Beacons extends JavaPlugin {
     private static Beacons instance;
+    private static DecimalFormat numberFormat = new DecimalFormat("#,###.##");
 
     @Override
     public void onEnable() {
@@ -27,5 +30,9 @@ public final class Beacons extends JavaPlugin {
 
     public static Beacons getInstance() {
         return instance;
+    }
+
+    public static String formatNumber(double amount) {
+        return numberFormat.format(amount);
     }
 }
